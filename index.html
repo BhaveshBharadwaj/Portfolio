@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puneeth Aradhya | Senior DevOps &amp; Cloud Infrastructure Engineer</title>
+  <meta name="description" content="Senior DevOps &amp; Platform Engineer with 10+ years specializing in Enterprise CI/CD Architecture, GitOps, DevSecOps, Multi-Region Infrastructure, and Platform Modernization.">
+  <meta name="keywords" content="Puneeth Aradhya, DevOps Architect, Platform Engineer, Kubernetes, EKS, Terraform, ArgoCD, GitOps, DevSecOps, Azure DevOps, AWS">
+  <meta name="author" content="Puneeth Aradhya">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Puneeth Aradhya | Senior DevOps &amp; Cloud Infrastructure Engineer">
+  <meta property="og:description" content="Award-winning DevOps Engineer portfolio featuring interactive 3D isometric pipeline canvas, GSAP animations, interactive CLI terminal, and CI/CD pipeline visualizer.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5.1 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <script>
+    /* Theme initialization to prevent render flash */
+    (function () {
+      var savedMode = 'light';
+      try {
+        var t = localStorage.getItem('portfolio-theme-mode');
+        if (t === 'light' || t === 'dark') savedMode = t;
+      } catch (e) {}
+      document.documentElement.setAttribute('data-theme', savedMode);
+    })();
+  </script>
+</head>
+
+<body class="is-loading">
+
+  <!-- Full-Screen Background Isometric Grid & Motion Canvas -->
+  <canvas id="bgIsoGridCanvas" class="bg-iso-grid-canvas" aria-hidden="true"></canvas>
+
+  <!-- Custom Cursor Tracker -->
+  <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       1. TERMINAL PRE-LOADER BOOT SEQUENCE (Full Screen Dark #0a0d12)
+       ══════════════════════════════════════════════════════════════════ -->
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="System Initializing">
+    <div class="preloader-backdrop"></div>
+    <div class="boot-terminal-card">
+      <div class="boot-terminal-bar">
+        <div class="boot-dots">
+          <span class="boot-dot red"></span>
+          <span class="boot-dot yellow"></span>
+          <span class="boot-dot green"></span>
+        </div>
+        <div class="boot-terminal-title"><i class="fa-solid fa-terminal"></i> CLOUD_INIT // AP-SOUTH-1</div>
+        <div class="boot-percentage-badge"><span class="tnum" id="bootCounter">0</span>%</div>
+      </div>
+
+      <div class="boot-terminal-console" id="bootTerminalConsole">
+        <div class="boot-cli-prompt">
+          <span class="prompt-user">puneeth@cloud-platform</span>:<span class="prompt-dir">~/infra</span>$ <span class="prompt-cmd">init-platform --strict</span>
+        </div>
+
+        <div class="boot-log-stream">
+          <div class="boot-log-line" id="logLine1">
+            <span class="log-tag tag-sys">[SYS_INIT]</span>
+            <span class="log-text">Mounting Kubernetes cluster context...</span>
+          </div>
+          <div class="boot-log-line" id="logLine2">
+            <span class="log-tag tag-iac">[IAC_APPLY]</span>
+            <span class="log-text">Loading Terraform state files...</span>
+          </div>
+          <div class="boot-log-line" id="logLine3">
+            <span class="log-tag tag-net">[NET_CONNECT]</span>
+            <span class="log-text">Establishing orange telemetry conduits...</span>
+          </div>
+          <div class="boot-log-line" id="logLine4">
+            <span class="log-tag tag-ok">[STATUS: 200 OK]</span>
+            <span class="log-text">Environment operational.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="boot-progress-wrap">
+        <div class="boot-progress-track">
+          <div class="boot-progress-bar" id="bootProgressBar"></div>
+        </div>
+        <div class="boot-progress-status" id="bootProgressLabel">Bootstrapping cluster context...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       2. TOP NAVIGATION BAR (Clean 3-Zone Layout)
+       ══════════════════════════════════════════════════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-container">
+      <!-- Left Brand: Puneeth Aradhya | Senior DevOps Architect -->
+      <a class="brand-wordmark" href="#hero">
+        <span class="brand-badge">PA</span>
+        <span class="brand-name">Puneeth Aradhya</span>
+        <span class="brand-divider">|</span>
+        <span class="brand-role">Senior DevOps Architect</span>
+      </a>
+
+      <!-- Navigation Links: Home, Pipeline, Terminal, Stack -->
+      <nav class="nav-wrapper" aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a class="nav-link is-active" href="#hero">Home</a></li>
+          <li><a class="nav-link" href="#pipeline-visualizer">Pipeline</a></li>
+          <li><a class="nav-link" href="#terminal">Terminal</a></li>
+          <li><a class="nav-link" href="#stack">Stack</a></li>
+        </ul>
+      </nav>
+
+      <!-- Far Right: Theme Toggle switch -->
+      <div class="nav-actions">
+        <div class="theme-controller" role="group" aria-label="Theme Controller">
+          <button class="theme-tab active" data-mode="light" id="themeTabLight" title="Switch to Full-Page Light Theme (#f4f5f7)">
+            <i class="fa-solid fa-sun"></i> Light
+          </button>
+          <button class="theme-tab" data-mode="dark" id="themeTabDark" title="Switch to Full-Page Cloud Dark Theme (#0a0d12)">
+            <i class="fa-solid fa-moon"></i> Dark
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         3. HERO SECTION (Inspired by Attached 3D Isometric Reference Video)
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="hero-section" id="hero">
+      <div class="hero-stage-backdrop" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow"><i class="fa-solid fa-server"></i> Platform &amp; DevOps Architect · ap-south-1</span>
+
+            <h1 class="hero-title">
+              Autonomous Systems.<br>
+              <span class="title-accent">Zero Downtime.</span>
+            </h1>
+
+            <p class="hero-lead">
+              I turn fragile, manual deployments into <strong>secure, self-healing platforms</strong> teams ship on with absolute confidence. 10+ years engineering enterprise-scale GitOps, multi-region Kubernetes, and DevSecOps pipelines.
+            </p>
+
+            <div class="hero-cta-group">
+              <a class="btn btn-primary" href="#contact">
+                Initiate Contact <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a class="btn btn-outline" href="#case-studies">
+                <i class="fa-solid fa-diagram-project"></i> Architectural Case Studies
+              </a>
+            </div>
+
+            <!-- Real-time Telemetry Strip -->
+            <div class="telemetry-strip">
+              <div class="telemetry-col">
+                <span class="k">Service Status</span>
+                <span class="v live-green"><span class="status-pulse-dot"></span>Operational</span>
+              </div>
+              <div class="telemetry-col">
+                <span class="k">Region</span>
+                <span class="v">ap-south-1 · Mysuru</span>
+              </div>
+              <div class="telemetry-col">
+                <span class="k">Experience</span>
+                <span class="v">10y+ Production</span>
+              </div>
+              <div class="telemetry-col">
+                <span class="k">IST Clock</span>
+                <span class="v tnum" data-ist-clock>00:00:00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D Isometric Conduit Canvas Stage (Matching Reference Video) -->
+          <div class="hero-visual-stage">
+            <canvas class="iso-canvas" id="heroIsoCanvas" width="700" height="580"></canvas>
+
+            <!-- Floating Node Inspector Glass Overlay -->
+            <div class="node-inspector" id="nodeInspector">
+              <div class="inspector-header">
+                <span class="inspector-node-title" id="inspTitle">Node Title</span>
+                <span class="inspector-status-badge" id="inspPlatform">Platform</span>
+              </div>
+              <p class="inspector-desc" id="inspDesc">Node description telemetry.</p>
+              <div class="inspector-metrics">
+                <div>
+                  <span class="inspector-metric-label" id="inspMetric1Label">Metric 1</span>
+                  <span class="inspector-metric-val tnum" id="inspMetric1Val">--</span>
+                </div>
+                <div>
+                  <span class="inspector-metric-label" id="inspMetric2Label">Metric 2</span>
+                  <span class="inspector-metric-val tnum" id="inspMetric2Val">--</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Canvas Stage HUD Controls -->
+            <div class="canvas-hud">
+              <button class="canvas-hud-btn" id="btnPauseConduits" title="Toggle Conduit Pulses">
+                <i class="fa-solid fa-pause"></i> Pause
+              </button>
+              <span style="opacity:0.3">|</span>
+              <button class="canvas-hud-btn" id="btnSpeedConduits" title="Adjust Conduit Flow Speed">1x Speed</button>
+              <span style="opacity:0.3">|</span>
+              <button class="canvas-hud-btn" id="btnResetPerspective" title="Reset Isometric Camera">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee Pipeline Ribbon -->
+    <div class="marquee-ribbon" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item"><span class="dot"></span>Enterprise GitOps</span>
+        <span class="marquee-item"><span class="dot"></span>Kubernetes Multi-Region</span>
+        <span class="marquee-item"><span class="dot"></span>ArgoCD Continuous Delivery</span>
+        <span class="marquee-item"><span class="dot"></span>Terraform Cloud &amp; HashiCorp Vault</span>
+        <span class="marquee-item"><span class="dot"></span>Policy-as-Code (OPA Rego)</span>
+        <span class="marquee-item"><span class="dot"></span>DevSecOps (SonarQube &amp; Snyk)</span>
+        <span class="marquee-item"><span class="dot"></span>Prometheus &amp; Grafana Observability</span>
+        <span class="marquee-item"><span class="dot"></span>Azure DevOps Architecture</span>
+        <span class="marquee-item"><span class="dot"></span>Enterprise GitOps</span>
+        <span class="marquee-item"><span class="dot"></span>Kubernetes Multi-Region</span>
+        <span class="marquee-item"><span class="dot"></span>ArgoCD Continuous Delivery</span>
+        <span class="marquee-item"><span class="dot"></span>Terraform Cloud &amp; HashiCorp Vault</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         DEEP TECHNICAL FLOW CONTAINER
+         (In Hybrid Mode, seamlessly transitions into Dark Mode #0a0d12)
+         ══════════════════════════════════════════════════════════════════ -->
+    <div class="deep-technical-flow">
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           4. ARCHITECTURAL CASE STUDIES (3 Core Case Studies)
+           ══════════════════════════════════════════════════════════════════ -->
+      <section class="section" id="case-studies">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow"><span class="idx">01</span> — Architectural Proof</span>
+            <h2 class="heading-lg">Production-proven solutions.<br>Quantifiable engineering impact.</h2>
+            <p class="section-lead">Three deep-dive architectural implementations eliminating operational toil, securing multi-cloud footprints, and guaranteeing five-nines reliability.</p>
+          </div>
+
+          <div class="case-studies-stack">
+            <!-- Case Study 1 -->
+            <article class="case-card">
+              <div class="case-card-grid">
+                <div>
+                  <div class="case-meta-header">
+                    <span class="case-num">CASE 01</span>
+                    <span class="case-sep">/</span>
+                    <span class="case-category">High-Availability Architecture</span>
+                    <span class="case-badge">0% Downtime Deployed</span>
+                  </div>
+                  <h3 class="case-title">Zero-Downtime Multi-Region GitOps</h3>
+                  <p class="case-summary">
+                    Eliminated critical release bottlenecks and downtime with automated declarative GitOps, blue/green traffic shifting, and sub-second multi-region failover.
+                  </p>
+
+                  <div class="case-subblock">
+                    <h4 class="case-subblock-title">The Challenge</h4>
+                    <p class="case-subblock-p">
+                      Enterprise production releases suffered from recurring manual deployment bottlenecks, multi-hour release coordination meetings, and unpredictable 502 service outages during rolling updates across distributed geographical regions.
+                    </p>
+                  </div>
+
+                  <div class="case-subblock">
+                    <h4 class="case-subblock-title">The Solution</h4>
+                    <p class="case-subblock-p">
+                      Engineered an automated declarative GitOps deployment system using ArgoCD and GitHub Actions. Implemented blue/green traffic shifting managed by Route53 Weighted Routing and AWS Application Load Balancers, with instant automated health probes and sub-second rollbacks on anomaly detection.
+                    </p>
+                  </div>
+
+                  <div class="case-tools-row">
+                    <span class="tool-chip"><span class="dot"></span>Kubernetes (EKS)</span>
+                    <span class="tool-chip"><span class="dot"></span>ArgoCD</span>
+                    <span class="tool-chip"><span class="dot"></span>Terraform</span>
+                    <span class="tool-chip"><span class="dot"></span>AWS Route53</span>
+                    <span class="tool-chip"><span class="dot"></span>GitHub Actions</span>
+                    <span class="tool-chip"><span class="dot"></span>Helm</span>
+                  </div>
+                </div>
+
+                <!-- Metrics & Architecture Flow Panel -->
+                <div class="case-metrics-panel">
+                  <div class="case-metrics-grid">
+                    <div class="metric-item">
+                      <strong class="metric-val tnum">0%</strong>
+                      <span class="metric-label">Deployment Downtime</span>
+                      <span class="metric-ctx">During peak traffic releases</span>
+                    </div>
+                    <div class="metric-item">
+                      <strong class="metric-val tnum">6 min</strong>
+                      <span class="metric-label">Cycle Duration</span>
+                      <span class="metric-ctx">Down from 45 min baseline</span>
+                    </div>
+                    <div class="metric-item">
+                      <strong class="metric-val tnum">99.999%</strong>
+                      <span class="metric-label">Service SLA</span>
+                      <span class="metric-ctx">Multi-region failover</span>
+                    </div>
+                  </div>
+
+                  <div class="case-blueprint-flow">
+                    <div class="case-subblock-title">Deployment Flow Blueprint</div>
+                    <div class="blueprint-step">
+                      <span class="step-marker">01</span>
+                      <span>Signed GPG commit triggers multi-arch container build &amp; push to Amazon ECR.</span>
+                    </div>
+                    <div class="blueprint-step">
+                      <span class="step-marker">02</span>
+                      <span>ArgoCD controller detects repository state, syncing blue/green EKS manifests in us-east-1 and eu-west-1.</span>
+                    </div>
+                    <div class="blueprint-step">
+                      <span class="step-marker">03</span>
+                      <span>Route 53 automated health checks shift 100% production traffic once canary latency settles.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Case Study 2 -->
+            <article class="case-card">
+              <div class="case-card-grid">
+                <div>
+                  <div class="case-meta-header">
+                    <span class="case-num">CASE 02</span>
+                    <span class="case-sep">/</span>
+                    <span class="case-category">Security &amp; Governance</span>
+                    <span class="case-badge">100% Audit Score</span>
+                  </div>
+                  <h3 class="case-title">Infrastructure as Code &amp; Compliance Automation</h3>
+                  <p class="case-summary">
+                    Enforced shift-left policy-as-code linting and automated drift detection to achieve 100% compliance across multi-account AWS environments.
+                  </p>
+
+                  <div class="case-subblock">
+                    <h4 class="case-subblock-title">The Challenge</h4>
+                    <p class="case-subblock-p">
+                      Unstructured, ad-hoc AWS resource modifications across multiple development teams caused severe security audit failures, orphaned resources, untracked privilege escalation, and costly cloud configuration drift.
+                    </p>
+                  </div>
+
+                  <div class="case-subblock">
+                    <h4 class="case-subblock-title">The Solution</h4>
+                    <p class="case-subblock-p">
+                      Enforced strict Git-driven Infrastructure as Code using Terraform modules integrated with Open Policy Agent (OPA) and Checkov. All Pull Requests automatically evaluate 42+ custom Rego compliance rules (KMS encryption, S3 public block, strict VPC isolation) and authenticate via short-lived HashiCorp Vault dynamic STS tokens.
+                    </p>
+                  </div>
+
+                  <div class="case-tools-row">
+                    <span class="tool-chip"><span class="dot"></span>Terraform Cloud</span>
+                    <span class="tool-chip"><span class="dot"></span>AWS IAM</span>
+                    <span class="tool-chip"><span class="dot"></span>HashiCorp Vault</span>
+                    <span class="tool-chip"><span class="dot"></span>Open Policy Agent (OPA)</span>
+                    <span class="tool-chip"><span class="dot"></span>Checkov</span>
+                  </div>
+                </div>
+
+                <div class="case-metrics-panel">
+                  <div class="case-metrics-grid">
+                    <div class="metric-item">
+                      <strong class="metric-val tnum">100%</strong>
+                      <span class="metric-label">Audit Score</span>
+                      <span class="metric-ctx">Passed SOC2 &amp; CIS benchmarks</span>
+                    </div>
+                    <div class="metric-item">
+                      <strong class="metric-val tnum">0</strong>
+                      <span class="metric-label">Unapproved Drifts</span>
+                      <span class="metric-ctx">Automated reconciliation</span>
+                    </div>
+                    <div class="metric-item">
+                      <strong class="metric-val tnum">&lt;90s</strong>
+                      <span class="metric-label">PR Validation</span>
+                      <span class="metric-ctx">42+ checks per Pull Request</span>
+                    </div>
+                  </div>
+
+                  <div class="case-blueprint-flow">
+                    <div class="case-subblock-title">Compliance Guardrail Blueprint</div>
+                    <div class="blueprint-step">
+                      <span class="step-marker">01</span>
+                      <span>CI runner triggers Vault OIDC integration, issuing temporary 15-minute AWS STS credentials.</span>
+                    </div>
+                    <div class="blueprint-step">
+                      <span class="step-marker">02</span>
+                      <span>OPA Rego engine and Checkov inspect speculative plan against enterprise compliance policies.</span>
+                    </div>
+                    <div class="blueprint-step">
+                      <span class="step-marker">03</span>
+                      <span>Merge to main automatically triggers Terraform Cloud remote state apply with full audit trail.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Case Study 3 -->
+            <article class="case-card">
+              <div class="case-card-grid">
+                <div>
+                  <div class="case-meta-header">
+                    <span class="case-num">CASE 03</span>
+                    <span class="case-sep">/</span>
+                    <span class="case-category">Site Reliability Engineering</span>
+                    <span class="case-badge">Autonomous Remediation</span>
+                  </div>
+                  <h3 class="case-title">Event-Driven Observability &amp; Self-Healing</h3>
+                  <p class="case-summary">
+                    Autonomous incident mitigation engine that catches memory leaks and latency degradation before alerts reach on-call engineers.
+                  </p>
+
+                  <div class="case-subblock">
+                    <h4 class="case-subblock-title">The Challenge</h4>
+                    <p class="case-subblock-p">
+                      High Mean Time to Resolution (MTTR ~28 minutes) caused by reactive manual triaging during sudden memory leaks, microservice cascading timeouts, and node memory thrashing during traffic spikes.
+                    </p>
+                  </div>
+
+                  <div class="case-subblock">
+                    <h4 class="case-subblock-title">The Solution</h4>
+                    <p class="case-subblock-p">
+                      Designed and deployed a proactive event-driven self-healing framework. Prometheus Alertmanager webhooks stream anomaly vectors into serverless AWS Lambda remediation workers written in Python. The workers autonomously execute pre-verified playbooks: gradual pod rotation, HPA preemptive scaling, and upstream circuit breaking.
+                    </p>
+                  </div>
+
+                  <div class="case-tools-row">
+                    <span class="tool-chip"><span class="dot"></span>Prometheus</span>
+                    <span class="tool-chip"><span class="dot"></span>Grafana</span>
+                    <span class="tool-chip"><span class="dot"></span>AWS Lambda</span>
+                    <span class="tool-chip"><span class="dot"></span>Python</span>
+                    <span class="tool-chip"><span class="dot"></span>PagerDuty API</span>
+                    <span class="tool-chip"><span class="dot"></span>OpenTelemetry</span>
+                  </div>
+                </div>
+
+                <div class="case-metrics-panel">
+                  <div class="case-metrics-grid">
+                    <div class="metric-item">
+                      <strong class="metric-val tnum">75%</strong>
+                      <span class="metric-label">MTTR Reduction</span>
+                      <span class="metric-ctx">Decreased P1 response time</span>
+                    </div>
+                    <div class="metric-item">
+                      <strong class="metric-val tnum">88%</strong>
+                      <span class="metric-label">Autonomous Healing</span>
+                      <span class="metric-ctx">Zero human intervention</span>
+                    </div>
+                    <div class="metric-item">
+                      <strong class="metric-val tnum">4 min</strong>
+                      <span class="metric-label">Avg Recovery</span>
+                      <span class="metric-ctx">Down from 28 min manual</span>
+                    </div>
+                  </div>
+
+                  <div class="case-blueprint-flow">
+                    <div class="case-subblock-title">Self-Healing Event Loop</div>
+                    <div class="blueprint-step">
+                      <span class="step-marker">01</span>
+                      <span>Prometheus evaluates rate-of-change rules, predicting container saturation 10 mins before OOM.</span>
+                    </div>
+                    <div class="blueprint-step">
+                      <span class="step-marker">02</span>
+                      <span>Webhook dispatches signed JSON event payload to secure AWS API Gateway and Lambda worker.</span>
+                    </div>
+                    <div class="blueprint-step">
+                      <span class="step-marker">03</span>
+                      <span>Lambda triggers safe pod cordon, spins up warm replacement replicas, and publishes Grafana audit log.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ══════════════════════════════════════════════════════════════════
+               5. INTERACTIVE CI/CD PIPELINE VISUALIZER WIDGET
+               ══════════════════════════════════════════════════════════════════ -->
+          <div class="pipeline-visualizer-container" id="pipeline-visualizer">
+            <div class="pv-header">
+              <div class="pv-title-area">
+                <span class="eyebrow"><i class="fa-solid fa-code-branch"></i> Interactive CI/CD Graph</span>
+                <h3>End-to-End Enterprise Delivery Pipeline</h3>
+                <p>Click any pipeline stage below to inspect build logs, security gates, and container digests.</p>
+              </div>
+              <div class="pv-controls">
+                <button class="btn btn-primary" id="btnTriggerPipeline">
+                  <i class="fa-solid fa-play"></i> Trigger Pipeline Run
+                </button>
+              </div>
+            </div>
+
+            <!-- Pipeline Step Graph -->
+            <div class="pipeline-graph">
+              <div class="pipeline-connection-track">
+                <span class="pipeline-connection-fill" id="pipeFillTrack"></span>
+              </div>
+              <!-- Dynamically populated from data.js -->
+              <div id="pipelineGraphStages" style="display:flex; justify-content:space-between; width:100%; position:relative; z-index:2;"></div>
+            </div>
+
+            <!-- Pipeline Execution Inspector Console -->
+            <div class="pv-inspector-console">
+              <div class="pv-inspector-header">
+                <div>
+                  <i class="fa-solid fa-terminal" style="color:var(--conduit-orange); margin-right:0.4rem;"></i>
+                  <span id="pipeInspectorTitle">Stage Inspector</span>
+                </div>
+                <span id="pipeInspectorTime" class="tnum">Duration: 42s</span>
+              </div>
+              <div class="pv-log-stream" id="pipeLogStream">
+                <!-- Log stream lines -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           6. INTERACTIVE GLASSMORHPISM CLI TERMINAL
+           ══════════════════════════════════════════════════════════════════ -->
+      <section class="section" id="terminal">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow"><span class="idx">02</span> — Interactive Shell</span>
+            <h2 class="heading-lg">Live Platform CLI.</h2>
+            <p class="section-lead" style="margin:0 auto 1.5rem;">Run real infrastructure commands directly in browser or click presets below.</p>
+          </div>
+
+          <div class="terminal-wrapper">
+            <!-- Command Quick Presets -->
+            <div class="terminal-presets">
+              <span class="preset-label">Quick Commands:</span>
+              <button class="preset-chip" data-cmd="kubectl get pods -n production">kubectl get pods -n production</button>
+              <button class="preset-chip" data-cmd="terraform plan">terraform plan</button>
+              <button class="preset-chip" data-cmd="argocd app get production">argocd app get production</button>
+              <button class="preset-chip" data-cmd="cat resume.txt">cat resume.txt</button>
+              <button class="preset-chip" data-cmd="help">help</button>
+            </div>
+
+            <!-- Terminal Window Card -->
+            <div class="terminal-card">
+              <div class="terminal-topbar">
+                <div class="term-buttons">
+                  <span class="term-btn close"></span>
+                  <span class="term-btn minimize"></span>
+                  <span class="term-btn maximize"></span>
+                </div>
+                <span class="term-title">puneeth@cloud-platform: ~/production-mesh (zsh)</span>
+                <div class="term-actions-top">
+                  <button class="term-btn-icon" id="btnClearTerm" title="Clear terminal screen">
+                    <i class="fa-solid fa-ban"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Terminal Screen & Input -->
+              <div class="terminal-screen" id="termScreen">
+                <div class="term-output-history" id="termHistory">
+                  <!-- Commands output dynamically appended here -->
+                </div>
+
+                <div class="term-input-row">
+                  <span class="term-prompt">puneeth@cloud-platform:~$</span>
+                  <input type="text" class="term-input" id="termInput" placeholder="Type a command (e.g. 'help', 'kubectl get pods')…" autocomplete="off" spellcheck="false" autofocus>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           7. TECH STACK MATRIX (Categorized Matrix)
+           ══════════════════════════════════════════════════════════════════ -->
+      <section class="section" id="stack">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow"><span class="idx">03</span> — The Declared Toolchain</span>
+            <h2 class="heading-lg">Infrastructure &amp; Delivery Matrix.</h2>
+            <p class="section-lead">The battle-tested technologies and declarative frameworks powering automated, compliant delivery.</p>
+          </div>
+
+          <div class="stack-matrix-grid">
+            <!-- Category 1 -->
+            <div class="stack-category-card">
+              <h3>Delivery &amp; GitOps</h3>
+              <p class="stack-category-desc">Automated delivery engines and declarative reconciliation loops.</p>
+              <div class="stack-items-list">
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-solid fa-code-branch"></i> ArgoCD</div>
+                  <span class="stack-item-role">GitOps Continuous Delivery</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-brands fa-github"></i> GitHub Actions</div>
+                  <span class="stack-item-role">Enterprise Matrix CI/CD</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-brands fa-microsoft"></i> Azure DevOps</div>
+                  <span class="stack-item-role">Pipelines, Boards &amp; Artifacts</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-brands fa-jenkins"></i> Jenkins</div>
+                  <span class="stack-item-role">Distributed Build Clusters</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="stack-category-card">
+              <h3>Cloud &amp; Container Platforms</h3>
+              <p class="stack-category-desc">Elastic, fault-tolerant container runtimes and multi-cloud foundations.</p>
+              <div class="stack-items-list">
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-solid fa-dharmachakra"></i> Kubernetes (EKS/AKS)</div>
+                  <span class="stack-item-role">Orchestration &amp; Autoscaling</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-brands fa-aws"></i> AWS Cloud</div>
+                  <span class="stack-item-role">EKS, Route53, IAM, S3</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-brands fa-microsoft"></i> Microsoft Azure</div>
+                  <span class="stack-item-role">AKS, Virtual Networks, Key Vault</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-brands fa-docker"></i> Docker &amp; Buildx</div>
+                  <span class="stack-item-role">Multi-arch Containerization</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="stack-category-card">
+              <h3>IaC &amp; DevSecOps Guardrails</h3>
+              <p class="stack-category-desc">Policy-as-code, dynamic secrets, and shifting security verification left.</p>
+              <div class="stack-items-list">
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-solid fa-cubes"></i> Terraform Cloud</div>
+                  <span class="stack-item-role">Infrastructure as Code</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-solid fa-vault"></i> HashiCorp Vault</div>
+                  <span class="stack-item-role">Ephemeral Secrets &amp; Dynamic STS</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-solid fa-shield-halved"></i> Open Policy Agent</div>
+                  <span class="stack-item-role">Rego Policy-as-Code Gates</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-solid fa-bug-slash"></i> SonarQube &amp; Snyk</div>
+                  <span class="stack-item-role">SAST, SCA &amp; Image Scanning</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 4 -->
+            <div class="stack-category-card">
+              <h3>Observability &amp; Self-Healing</h3>
+              <p class="stack-category-desc">Distributed tracing, automated playbooks, and preemptive mitigation.</p>
+              <div class="stack-items-list">
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-solid fa-chart-line"></i> Prometheus &amp; Grafana</div>
+                  <span class="stack-item-role">Telemetry, Dashboards &amp; Alerts</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-brands fa-python"></i> Python &amp; Lambda</div>
+                  <span class="stack-item-role">Self-Healing Automation Workers</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-brands fa-golang"></i> Go &amp; PowerShell</div>
+                  <span class="stack-item-role">Cloud CLI Tools &amp; Runbooks</span>
+                </div>
+                <div class="stack-item-row">
+                  <div class="stack-item-left"><i class="fa-solid fa-bell"></i> PagerDuty</div>
+                  <span class="stack-item-role">Smart Alert Escalation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           8. CAREER DEPLOYMENT LOG & PROOF (From Authentic index.html)
+           ══════════════════════════════════════════════════════════════════ -->
+      <section class="section" id="proof">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow"><span class="idx">04</span> — git log --career</span>
+            <h2 class="heading-lg">Enterprise Deployment History.</h2>
+            <p class="section-lead">A track record of building reliable platforms across enterprise banking, insurance, and technology systems.</p>
+          </div>
+
+          <div class="experience-timeline">
+            <!-- Role 1: LTM -->
+            <article class="exp-release-card">
+              <div>
+                <span class="exp-tag">release/2025.12 — HEAD</span>
+                <h3 class="exp-company">LTM</h3>
+                <p class="exp-period">Dec 2025 → Present</p>
+              </div>
+              <div>
+                <h4 class="exp-role-title">Senior Specialist · Software Engineer <span class="exp-now-badge">now</span></h4>
+                <p class="exp-desc">
+                  Leading enterprise DevOps and DevSecOps initiatives through pipeline automation, security guardrails, and modern CI/CD practices. Building scalable delivery platforms that enhance developer productivity, enforce compliance, and streamline multi-team software releases.
+                </p>
+                <div class="exp-chips">
+                  <span class="tool-chip"><span class="dot"></span>DevSecOps</span>
+                  <span class="tool-chip"><span class="dot"></span>GitHub Actions</span>
+                  <span class="tool-chip"><span class="dot"></span>CI/CD Architecture</span>
+                  <span class="tool-chip"><span class="dot"></span>Developer Experience</span>
+                  <span class="tool-chip"><span class="dot"></span>Security Automation</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Role 2: Accenture -->
+            <article class="exp-release-card">
+              <div>
+                <span class="exp-tag">release/2015.06-2025.09</span>
+                <h3 class="exp-company">Accenture</h3>
+                <p class="exp-period">Jun 2015 → Sep 2025 · 10 yrs 4 mos</p>
+              </div>
+              <div>
+                <h4 class="exp-role-title">DevOps Engineer</h4>
+                <p class="exp-desc">
+                  Delivered enterprise-scale DevOps transformations, CI/CD platform migrations, and release engineering solutions for tier-1 banking, insurance, and technology clients. Standardized multi-region cloud infrastructures, reduced deployment overhead by 85%, and migrated 120+ microservices with zero downtime.
+                </p>
+                <div class="exp-chips">
+                  <span class="tool-chip"><span class="dot"></span>Azure DevOps</span>
+                  <span class="tool-chip"><span class="dot"></span>CI/CD Architecture</span>
+                  <span class="tool-chip"><span class="dot"></span>Release Engineering</span>
+                  <span class="tool-chip"><span class="dot"></span>Platform Modernization</span>
+                  <span class="tool-chip"><span class="dot"></span>Dynamics 365</span>
+                  <span class="tool-chip"><span class="dot"></span>Jenkins</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Impact Metrics Strip -->
+          <div class="impact-strip-dark">
+            <span class="eyebrow" style="color:var(--conduit-orange);"><i class="fa-solid fa-chart-simple"></i> Cumulative Impact Summary</span>
+            <h3 class="impact-title">A decade of production engineering, diffed.</h3>
+            <p class="impact-sub">Ten years of release engineering and platform modernization, squashed into metrics.</p>
+            <div class="impact-grid-4">
+              <div class="impact-stat-box">
+                <span class="n tnum">400+</span>
+                <span class="l">Enterprise Apps Supported</span>
+              </div>
+              <div class="impact-stat-box">
+                <span class="n tnum">120+</span>
+                <span class="l">Microservices Migrated</span>
+              </div>
+              <div class="impact-stat-box">
+                <span class="n tnum">19%</span>
+                <span class="l">Infrastructure Footprint Reduced</span>
+              </div>
+              <div class="impact-stat-box">
+                <span class="n tnum">10+</span>
+                <span class="l">Years Enterprise Delivery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           9. CREDENTIALS & AWARDS
+           ══════════════════════════════════════════════════════════════════ -->
+      <section class="section" id="credentials">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow"><span class="idx">05</span> — ls -la credentials/</span>
+            <h2 class="heading-lg">Verified Credentials &amp; Recognition.</h2>
+          </div>
+
+          <!-- Certifications List -->
+          <div class="credentials-list">
+            <a class="cred-row" href="https://learn.microsoft.com/api/credentials/share/en-us/PuneethAradhya-6002/ED2CB021D00396F2?sharingId" target="_blank" rel="noopener noreferrer">
+              <span class="cred-issuer">Microsoft Certified</span>
+              <span class="cred-name">DevOps Engineer Expert</span>
+              <span class="cred-dates">Jun 2025 → Jun 2027</span>
+              <span class="cred-link">Verify Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
+            <a class="cred-row" href="https://learn.microsoft.com/api/credentials/share/en-us/PuneethAradhya-6002/BB5EE1E1108B674E?sharingId" target="_blank" rel="noopener noreferrer">
+              <span class="cred-issuer">Microsoft Certified</span>
+              <span class="cred-name">Azure Developer Associate</span>
+              <span class="cred-dates">Jun 2025 → Jun 2027</span>
+              <span class="cred-link">Verify Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
+            <a class="cred-row" href="https://www.credly.com/badges/10395d56-1daf-4bf1-b781-26445abe637e/linked_in_profile" target="_blank" rel="noopener noreferrer">
+              <span class="cred-issuer">GitHub Certified</span>
+              <span class="cred-name">GitHub Copilot</span>
+              <span class="cred-dates">Jun 2025 → Jun 2028</span>
+              <span class="cred-link">Verify Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
+          </div>
+
+          <!-- Awards Grid -->
+          <div style="margin-bottom: 2rem;">
+            <div class="eyebrow" style="margin-bottom: 1rem;"><i class="fa-solid fa-trophy"></i> Delivery Excellence Awards</div>
+            <div class="awards-grid">
+              <article class="award-card">
+                <span class="award-year">2020</span>
+                <h4 class="award-title">Accenture Celebrates Excellence</h4>
+                <span class="award-badge-pill">Individual Award</span>
+                <p class="award-desc">For automation initiatives that improved client deployments and cut manual intervention by 85%.</p>
+              </article>
+              <article class="award-card">
+                <span class="award-year">2021</span>
+                <h4 class="award-title">pinNAcle Collaborator Award</h4>
+                <span class="award-badge-pill">Cross-Functional Teamwork</span>
+                <p class="award-desc">For outstanding collaboration implementing repeatable CI/CD solutions across distributed teams.</p>
+              </article>
+              <article class="award-card">
+                <span class="award-year">2023</span>
+                <h4 class="award-title">Shared Success Catalyst</h4>
+                <span class="award-badge-pill">Innovation &amp; Knowledge</span>
+                <p class="award-desc">For enabling knowledge sharing and accelerating GitOps adoption across enterprise divisions.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           10. CONTACT SECTION & FOOTER
+           ══════════════════════════════════════════════════════════════════ -->
+      <section class="section contact-section" id="contact">
+        <div class="container">
+          <span class="eyebrow"><span class="idx">06</span> — Ping Puneeth</span>
+          <h2 class="contact-headline">Ready to engineer<br><span class="grad-orange">something resilient?</span></h2>
+          <p class="contact-subtext">Let's discuss how to eliminate deployment anxiety, automate compliance, and build delivery platforms your engineers love.</p>
+
+          <div class="contact-buttons">
+            <a class="btn btn-primary" href="mailto:aradhyapuneeth@gmail.com">
+              <i class="fa-solid fa-envelope"></i> Send Email
+            </a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/puneeth-aradhya" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a class="btn btn-outline" href="https://github.com/aradhyapuneeth" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+
+          <div>
+            <button class="clip-cmd-pill" id="btnCopyEmail" title="Click to copy email">
+              <span class="cmd-prompt">$</span>
+              <span class="original-text">echo aradhyapuneeth@gmail.com | clip</span>
+              <span class="copied-feedback"><i class="fa-solid fa-check"></i> copied to clipboard</span>
+            </button>
+          </div>
+
+          <div class="contact-metadata">
+            <span>Base: Mysuru, Karnataka, IN</span>
+            <a href="https://www.google.com/maps?q=Mysuru,Karnataka,India" target="_blank" rel="noopener noreferrer">12.2958° N · 76.6394° E <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7rem;"></i></a>
+            <span>Timezone: IST (UTC+05:30)</span>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- End of deep-technical-flow -->
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       11. FOOTER
+       ══════════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-badge">PA</span>
+        <span>Puneeth Aradhya</span>
+      </div>
+
+      <div style="font-family:var(--font-mono); font-size:0.8rem;">
+        © 2026 · Deployed from Mysuru · Status: <span style="color:var(--status-emerald);">Operational</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/puneeth-aradhya" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/aradhyapuneeth" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://devpost.com/aradhyapuneeth" target="_blank" rel="noopener noreferrer">Devpost</a>
+        <a href="mailto:aradhyapuneeth@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CDN Libraries: Lenis for inertial smooth scroll, GSAP for motion animations -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Local Modular Scripts (Zero build step, imported via relative path to satisfy CORS rules) -->
+  <script src="./assets/js/data.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+</body>
+</html>

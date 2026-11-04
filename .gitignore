@@ -1,8 +1,59 @@
+# Dependencies
 node_modules/
+
+# Build outputs
 build/
 dist/
 coverage/
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# Logs
 *.log
-.env*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment & Secrets — NEVER commit these
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
 !.env.example
+
+# API Keys & Credentials
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+service-account*.json
+*-sa-key.json
+
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Terraform sensitive state (if added later)
+*.tfstate
+*.tfstate.backup
+.terraform/
+*.tfvars
+!*.tfvars.example
+
+# Misc
+*.bak
+*.tmp
+*.swp

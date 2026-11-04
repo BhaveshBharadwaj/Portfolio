@@ -1,254 +1,254 @@
 /**
  * @file assets/js/data.js
- * Global portfolio data declaration for Puneeth Aradhya
+ * Global portfolio data declaration for Bhavesh Bharadwaj
  * Zero-build-step architecture: declared directly on window.portfolioData to avoid CORS issues on file:// and GitHub Pages.
  */
 
 window.portfolioData = {
   meta: {
-    name: "Puneeth Aradhya",
-    initials: "PA",
-    roleTitle: "Senior DevOps & Cloud Infrastructure Engineer",
-    shortRole: "Senior Platform & DevOps Architect",
-    summary: "Senior DevOps Engineer with 10+ years specializing in Enterprise CI/CD Architecture, GitOps, DevSecOps, Multi-Region Infrastructure, and Platform Modernization. Engineering resilient delivery pipelines that turn complex deployments into non-events.",
-    location: "ap-south-1 · Mysuru & Bengaluru, India",
-    coordinates: "12.2958° N, 76.6394° E",
-    experienceYears: "10+ Years Enterprise Delivery",
-    uptime: "10y+ production uptime",
-    statusText: "Operational · Open to Senior / Staff Platform Roles",
-    email: "aradhyapuneeth@gmail.com",
-    github: "https://github.com/aradhyapuneeth",
-    linkedin: "https://www.linkedin.com/in/puneeth-aradhya",
-    devpost: "https://devpost.com/aradhyapuneeth",
+    name: "Bhavesh Bharadwaj",
+    initials: "BB",
+    roleTitle: "Associate Cloud Engineer",
+    shortRole: "Cloud Engineer & DevOps Automation Specialist",
+    summary: "Cloud Engineer with 4+ years of professional experience administering and automating Google Cloud Platform environments. Experienced in GCP IAM, VPC & firewall security, Organization Policies, monitoring with Prometheus, Grafana and Google Cloud Monitoring, CI/CD with GitHub Actions and Cloud Build, and infrastructure automation using Terraform, Docker, Python and Bash. Holds Google Associate Cloud Engineer and AWS DevOps Engineer – Professional certifications. Available to join immediately.",
+    location: "asia-south1 · Hyderabad, India",
+    coordinates: "17.3850° N, 78.4867° E",
+    experienceYears: "4+ Years Cloud & DevOps",
+    uptime: "4+ years production uptime",
+    statusText: "Operational · Available to Join Immediately",
+    email: "bhaveshbharadwaj24@gmail.com",
+    phone: "+91-8790419675",
+    github: "https://github.com/bhaveshbharadwaj",
+    linkedin: "https://www.linkedin.com/in/bhaveshbharadwaj",
     stats: [
-      { value: "400+", label: "Enterprise Apps Supported", change: "+100% cloud parity" },
-      { value: "120+", label: "Microservices Migrated", change: "Zero data loss" },
-      { value: "0%", label: "Deployment Downtime", change: "Blue/Green GitOps" },
-      { value: "75%", label: "P1 MTTR Reduction", change: "Self-healing triggers" }
+      { value: "4+ Yrs", label: "Cloud & DevOps Experience", change: "GCP & AWS production" },
+      { value: "40%", label: "Manual Effort Reduced", change: "Serverless ETL workflows" },
+      { value: "21%", label: "Process Efficiency Gain", change: "Data & workflow automation" },
+      { value: "Immediate", label: "Notice Period", change: "Ready to deploy" }
     ]
   },
 
-  // 3D Isometric Pipeline Nodes (Matching the visual flow in reference video)
+  // 3D Isometric Pipeline Nodes (Representing Bhavesh's GCP & Cloud Architecture)
   isometricNodes: [
     {
       id: "source",
-      label: "Source Code",
-      platform: "GitHub Enterprise",
+      label: "Source & Version Control",
+      platform: "GitHub & Git",
       icon: "fa-brands fa-github",
-      tag: "v2.8.4",
+      tag: "v1.4.0",
       status: "Synced",
       health: 100,
-      description: "Signed commit streams, protected branch rules, and semantic versioning triggers.",
-      metrics: { commits: "48/day", branches: "12 active", prChecks: "100% pass" },
+      description: "Repository management, protected branches, pull requests, and automated triggers.",
+      metrics: { commits: "24/day", branches: "6 active", prChecks: "100% pass" },
       color: "#ff781f",
       coords: { x: 0, y: 0, z: 20 }
     },
     {
       id: "cicd",
-      label: "CI/CD Orchestration",
-      platform: "ArgoCD & GitHub Actions",
+      label: "CI/CD & Cloud Build",
+      platform: "Cloud Build & Actions",
       icon: "fa-solid fa-code-merge",
-      tag: "Declarative",
+      tag: "Automated",
       status: "Active",
       health: 99.8,
-      description: "Ephemeral runner pools, containerized test harnesses, and automated matrix builds.",
-      metrics: { buildTime: "3m 12s", successRate: "99.8%", concurrency: "16 runners" },
+      description: "Automated container builds, unit testing, and continuous deployment pipelines.",
+      metrics: { buildTime: "2m 45s", successRate: "99.8%", concurrency: "8 runners" },
       color: "#ff6b00",
       coords: { x: 1, y: 0, z: 45 }
     },
     {
       id: "iac",
-      label: "IaC & Governance",
-      platform: "Terraform & Vault",
+      label: "IaC & GCP Governance",
+      platform: "Terraform & GCP IAM",
       icon: "fa-solid fa-cubes",
-      tag: "Policy-as-Code",
+      tag: "Least-Privilege",
       status: "Compliant",
       health: 100,
-      description: "Immutable state locking, HashiCorp Vault dynamic secrets, and OPA compliance guardrails.",
-      metrics: { modules: "48 verified", drifts: "0 detected", auditScore: "100%" },
+      description: "Declarative infrastructure, service account least-privilege, Org Policies & VPC firewalls.",
+      metrics: { modules: "26 verified", drifts: "0 detected", auditScore: "100%" },
       color: "#ff8c00",
       coords: { x: 2, y: 1, z: 30 }
     },
     {
       id: "cluster",
-      label: "Cluster Runtime",
-      platform: "AWS EKS Multi-Region",
+      label: "Container Runtime & Data",
+      platform: "GKE & BigQuery",
       icon: "fa-solid fa-network-wired",
-      tag: "K8s v1.31",
+      tag: "Kubernetes & Serverless",
       status: "Healthy",
       health: 100,
-      description: "High-density pod autoscaling, service mesh traffic splitting, and automated drain/cordon.",
-      metrics: { activePods: "64 running", cpuUtil: "28.4%", memory: "14.2 GB" },
+      description: "Scalable GKE clusters, Cloud Run services, Cloud Functions, and BigQuery data processing.",
+      metrics: { activePods: "32 running", queryLatency: "180ms", processingRate: "1.2M rows/hr" },
       color: "#ff5400",
       coords: { x: 3, y: 1, z: 50 }
     },
     {
       id: "observability",
-      label: "Observability",
-      platform: "Prometheus & Grafana",
+      label: "Observability & Alerting",
+      platform: "Cloud Monitoring & Grafana",
       icon: "fa-solid fa-chart-line",
       tag: "Telemetry",
       status: "Nominal",
       health: 99.99,
-      description: "Distributed tracing, real-time alertmanager routing, and synthetic latency monitors.",
-      metrics: { p99Latency: "18.4ms", uptime: "99.999%", activeAlerts: "0 P1/P2" },
+      description: "Prometheus metrics scraping, custom Grafana dashboards, Cloud Audit Logs, and alerting.",
+      metrics: { p99Latency: "14.2ms", uptime: "99.99%", activeAlerts: "0 P1/P2" },
       color: "#ff781f",
       coords: { x: 4, y: 2, z: 35 }
     }
   ],
 
-  // 3 Detailed Architectural Case Studies specified in requirements
+  // 3 Detailed Architectural Case Studies reflecting Bhavesh's Experience & Projects
   caseStudies: [
     {
-      id: "gitops-zero-downtime",
+      id: "serverless-data-pipeline",
       number: "01",
-      title: "Zero-Downtime Multi-Region GitOps",
-      category: "High-Availability Architecture",
-      lead: "Eliminating release bottlenecks and downtime with automated declarative GitOps and blue/green traffic shifting across AWS regions.",
-      tools: ["Kubernetes (EKS)", "ArgoCD", "Terraform", "AWS Route53", "GitHub Actions", "Helm"],
-      problem: "Enterprise production releases suffered from recurring manual deployment bottlenecks, multi-hour coordination meetings, and unpredictable 502 service outages during rolling updates across distributed geographical regions.",
-      solution: "Engineered an automated declarative GitOps deployment system using ArgoCD and GitHub Actions. Implemented blue/green traffic shifting managed by Route53 Weighted Routing and AWS Application Load Balancers, with instant automated health probes and sub-second rollbacks on anomaly detection.",
+      title: "Automated Serverless Data Pipeline on GCP",
+      category: "Data Engineering & Serverless ETL",
+      lead: "Eliminating manual reporting toil with an event-driven serverless pipeline integrating BigQuery, Cloud Functions, and scheduled workflows.",
+      tools: ["Google BigQuery", "Cloud Functions", "Python", "Cloud Storage", "Google Cloud Monitoring", "Cloud Scheduler"],
+      problem: "Manual ingestion and transformation of large, heterogeneous business datasets caused critical delays in decision-making, frequent reporting bottlenecks, and human operational error in report generation.",
+      solution: "Engineered an event-driven serverless ETL pipeline on Google Cloud Platform. Cloud Storage object finalization triggers Python-based Cloud Functions that clean, validate, and load structured records into BigQuery. Scheduled workflows automate downstream analytical transformations and sync KPI reporting.",
       metrics: [
-        { value: "0%", label: "Deployment Downtime", context: "Across all peak-traffic releases" },
-        { value: "6 min", label: "Cycle Duration", context: "Reduced from 45 minutes baseline" },
-        { value: "99.999%", label: "Service SLA", context: "Multi-region failover resilience" }
+        { value: "40%", label: "Manual Effort Reduction", context: "Automated daily ingestion & reporting" },
+        { value: "<3 min", label: "Pipeline Latency", context: "From raw upload to BigQuery tables" },
+        { value: "99.9%", label: "Data Accuracy", context: "Automated schema validation checks" }
       ],
       architectureSteps: [
-        "Git Commit & Semantic Release tagging initiates signed multi-architecture container build.",
-        "GitHub Actions runs automated vulnerability scanning (Trivy) and updates Kubernetes manifests.",
-        "ArgoCD controller detects repository state change, applying sync loops across us-east-1 and eu-west-1 EKS clusters.",
-        "ALB Ingress Controller routes 5% synthetic canary traffic, validating HTTP response latency and error budget.",
-        "Route53 automated weighted policy shifts 100% production traffic once health gates pass."
+        "Raw data files uploaded to secure Google Cloud Storage bucket with IAM restricted service accounts.",
+        "Cloud Storage Pub/Sub event triggers serverless Python Cloud Function with automated schema sanitization.",
+        "Processed records ingested into partitioned Google BigQuery dataset with optimized query clustering.",
+        "Cloud Scheduler initiates automated analytical aggregations and triggers KPI report generation.",
+        "Cloud Monitoring and Alerting track data freshness, execution status, and resource usage."
       ],
       badge: "Production Deployed"
     },
     {
-      id: "iac-compliance-automation",
+      id: "gcp-iac-least-privilege",
       number: "02",
-      title: "Infrastructure as Code & Compliance Automation",
-      category: "Security & Governance",
-      lead: "Enforcing shift-left policy-as-code linting and automated drift detection to achieve 100% compliance across multi-account AWS environments.",
-      tools: ["Terraform Cloud", "AWS IAM", "HashiCorp Vault", "Open Policy Agent (OPA)", "GitHub Actions", "Checkov"],
-      problem: "Unstructured, ad-hoc AWS resource modifications across multiple development teams caused severe security audit failures, orphaned resources, untracked privilege escalation, and costly cloud configuration drift.",
-      solution: "Enforced strict Git-driven Infrastructure as Code using Terraform modules integrated with Open Policy Agent (OPA) and Checkov. All Pull Requests automatically evaluate 42+ custom Rego compliance rules (KMS encryption, S3 public block, strict VPC isolation) and authenticate via short-lived HashiCorp Vault dynamic STS tokens.",
+      title: "GCP Infrastructure as Code & Least-Privilege IAM",
+      category: "Security, Governance & IaC",
+      lead: "Enforcing declarative Terraform provisioning, granular service account privileges, and Organization Policies across GCP projects.",
+      tools: ["Terraform", "GCP IAM", "Service Accounts", "VPC & Firewall Rules", "Secret Manager", "Organization Policies"],
+      problem: "Ad-hoc resource provisioning and broad IAM roles across cloud environments introduced security vulnerabilities, elevated permissions risks, and inconsistent firewall and VPC network topologies.",
+      solution: "Standardized GCP infrastructure using modular Terraform templates. Configured strict least-privilege IAM roles and dedicated service accounts for applications, hardened VPC firewall boundaries, isolated private subnets with OS Login and IAP, and enforced organizational guardrails.",
       metrics: [
-        { value: "100%", label: "Audit Compliance", context: "Passed SOC2 and CIS benchmarks" },
-        { value: "0", label: "Unapproved Drifts", context: "Automated drift reconciliation" },
-        { value: "<90s", label: "PR Validation Time", context: "42+ compliance checks per run" }
+        { value: "100%", label: "Least-Privilege Audit", context: "Zero permanent broad primitive roles" },
+        { value: "0", label: "Configuration Drift", context: "All infrastructure managed via Terraform" },
+        { value: "100%", label: "Secret Hygiene", context: "Managed securely via GCP Secret Manager" }
       ],
       architectureSteps: [
-        "Engineer opens Pull Request with modular Terraform code modifications.",
-        "CI runner triggers HashiCorp Vault OIDC integration, issuing temporary 15-minute AWS credentials.",
-        "OPA Rego engine and Checkov inspect speculative plan against enterprise compliance policies.",
-        "Automated PR comment annotates cost estimations (Infracost) and policy verification results.",
-        "Merge to main automatically triggers Terraform Cloud remote state apply with full audit logs."
+        "Modular Terraform repository structures networking, VPCs, firewall rules, and compute resources.",
+        "Dedicated GCP Service Accounts configured with minimal role bindings strictly required by workloads.",
+        "GCP Secret Manager integration securely provisions API keys and database credentials dynamically.",
+        "Cloud Audit Logs and Cloud Logging stream IAM events to centralized monitoring for security posture.",
+        "Terraform CI/CD execution ensures all modifications are peer-reviewed and tested before apply."
       ],
-      badge: "Audited & Verified"
+      badge: "Security Hardened"
     },
     {
-      id: "observability-self-healing",
+      id: "containerized-storage-observability",
       number: "03",
-      title: "Event-Driven Observability & Self-Healing",
-      category: "Site Reliability Engineering",
-      lead: "Autonomous incident mitigation engine that catches memory leaks and latency degradation before alerts reach on-call engineers.",
-      tools: ["Prometheus", "Grafana", "AWS Lambda", "Python", "PagerDuty API", "OpenTelemetry"],
-      problem: "High Mean Time to Resolution (MTTR ~28 minutes) caused by reactive manual triaging during sudden memory leaks, microservice cascading timeouts, and node memory thrashing during traffic spikes.",
-      solution: "Designed and deployed a proactive event-driven self-healing framework. Prometheus Alertmanager webhooks stream anomaly vectors into serverless AWS Lambda remediation workers written in Python. The workers autonomously execute pre-verified playbooks: gradual pod rotation, HPA preemptive scaling, and upstream circuit breaking.",
+      title: "Containerized Cloud Storage & Full-Stack Observability",
+      category: "Containers, Microservices & SRE",
+      lead: "Developing containerized web services with secure cloud storage backends, monitored by Prometheus, Grafana, and Cloud Monitoring.",
+      tools: ["Docker", "Google Kubernetes Engine (GKE)", "Flask / FastAPI", "AWS S3 / Cloud Storage", "Prometheus", "Grafana"],
+      problem: "Monolithic file storage and lack of real-time telemetry prevented visibility into latency spikes, storage operation bottlenecks, and application error rates.",
+      solution: "Developed a containerized microservice application using Python (Flask/FastAPI) and Docker, deploying to Google Kubernetes Engine (GKE) and connecting securely to cloud object storage. Integrated Prometheus metrics exporters and designed real-time Grafana dashboards with Google Cloud Monitoring alerts.",
       metrics: [
-        { value: "75%", label: "MTTR Reduction", context: "Decreased P1 response time" },
-        { value: "88%", label: "Autonomous Healing", context: "Resolved without human intervention" },
-        { value: "4 min", label: "Average Recovery", context: "Down from 28 minutes manual triage" }
+        { value: "99.95%", label: "Service Availability", context: "Containerized GKE replica sets" },
+        { value: "Real-time", label: "Metric Telemetry", context: "Prometheus scraping & Grafana visualization" },
+        { value: "Automated", label: "Alert Dispatch", context: "Proactive threshold alerts on error spikes" }
       ],
       architectureSteps: [
-        "OpenTelemetry agents capture p95/p99 latency spikes and memory consumption thresholds.",
-        "Prometheus evaluates rate-of-change alerting rules (predictive saturation detection).",
-        "Alertmanager routes structured JSON event to AWS API Gateway secured via HMAC signatures.",
-        "Python AWS Lambda executes safe container cordon, graceful termination, and replica scale-up.",
-        "Remediation status and root-cause telemetry automatically dispatched to Grafana dashboard and PagerDuty."
+        "Multi-stage Docker builds produce lightweight, secure container images running as non-root.",
+        "Deployments orchestrated on GKE with resource limits, liveness/readiness probes, and horizontal scaling.",
+        "Secure IAM-authenticated storage connectors interact with cloud buckets without static access keys.",
+        "Prometheus scrapes application metrics endpoints, streaming performance telemetry to Grafana.",
+        "Google Cloud Monitoring dashboards and alert policies notify teams of anomalies proactively."
       ],
-      badge: "Zero-Human Remediation"
+      badge: "SRE Monitored"
     }
   ],
 
-  // Interactive CI/CD Pipeline Visualizer Data
+  // Interactive CI/CD Pipeline Visualizer Data (Tailored to Cloud Build & GitHub Actions)
   pipelineDemo: {
-    title: "Live CI/CD Delivery Pipeline Simulator",
-    subtitle: "Interactive execution flow simulating an end-to-end containerized release to AWS EKS.",
+    title: "Live Cloud Delivery Pipeline Simulator",
+    subtitle: "Interactive execution flow simulating an end-to-end containerized release to Google Kubernetes Engine (GKE).",
     stages: [
       {
         id: "stage-source",
-        name: "Source",
+        name: "Source & PR",
         icon: "fa-brands fa-git-alt",
         tool: "GitHub",
         status: "passed",
-        duration: "12s",
-        details: "GPG commit verification, branch protection checks, and changelog diff calculation.",
+        duration: "10s",
+        details: "Branch protection rules, pull request validation, and semantic version tagging.",
         log: [
-          "[source] fetching origin/main...",
-          "[source] commit 7f8a91c verified with GPG key ID: 0x9B41",
-          "[source] detected 14 changed files across 3 microservices",
-          "[source] tag: v2.8.4-prod initialized"
+          "[source] fetching origin/main from repository...",
+          "[source] pull request #24 verified with required approvals",
+          "[source] detected changes in: /data-pipeline, /api-service, /terraform",
+          "[source] commit 9e4a12b checked out successfully"
         ]
       },
       {
         id: "stage-lint",
-        name: "Lint & SAST",
+        name: "Lint & Validate",
         icon: "fa-solid fa-shield-halved",
-        tool: "SonarQube & Checkmarx",
+        tool: "Flake8 & Pytest",
         status: "passed",
-        duration: "48s",
-        details: "Static application security testing, code smell analysis, and test coverage thresholds.",
+        duration: "32s",
+        details: "Static code analysis, Python unit testing, and Dockerfile syntax validation.",
         log: [
-          "[sast] analyzing Go and Python source files...",
-          "[sast] Checkmarx scan completed: 0 High, 0 Medium vulnerabilities",
-          "[sast] SonarQube quality gate: PASSED (92.4% test coverage)",
-          "[sast] secrets scan: no plaintext credentials detected"
+          "[lint] executing flake8 on Python modules...",
+          "[lint] 0 syntax errors, PEP 8 formatting confirmed",
+          "[test] running pytest suite: 48 passed in 14.2s",
+          "[security] secret scanning: 0 API keys or credentials exposed"
         ]
       },
       {
         id: "stage-build",
         name: "Container Build",
         icon: "fa-brands fa-docker",
-        tool: "Docker Buildx",
+        tool: "Docker & Cloud Build",
         status: "passed",
-        duration: "1m 34s",
-        details: "Multi-arch OCI image build (linux/amd64, linux/arm64) with layer caching in Amazon ECR.",
+        duration: "1m 15s",
+        details: "Container image build with layer caching, pushed to Google Artifact Registry.",
         log: [
-          "[build] initializing buildx runner container...",
-          "[build] cache hit on base layers (node:20-alpine / golang:1.22)",
-          "[build] compiling binary with CGO_ENABLED=0",
-          "[build] generated digest sha256:4a8bc3921... pushed to ECR"
+          "[build] Cloud Build worker initialized...",
+          "[build] cache hit on python:3.11-slim base layer",
+          "[build] installing dependencies from requirements.txt",
+          "[build] image tagged asia-south1-docker.pkg.dev/prod/apps/service:v1.4.0",
+          "[build] pushed container digest sha256:8b71d9a..."
         ]
       },
       {
         id: "stage-security",
-        name: "Policy & OPA",
+        name: "IaC & Governance",
         icon: "fa-solid fa-lock",
-        tool: "Trivy & OPA",
+        tool: "Terraform & GCP IAM",
         status: "passed",
-        duration: "26s",
-        details: "Container vulnerability scan, SBOM generation, and OPA Rego compliance validation.",
+        duration: "24s",
+        details: "Terraform plan verification, GCP IAM least-privilege review, and Org Policy compliance.",
         log: [
-          "[policy] scanning container filesystem with Trivy v0.51...",
-          "[policy] 0 critical, 0 high CVEs identified in base image",
-          "[policy] OPA Rego evaluating 42 security rules...",
-          "[policy] runAsNonRoot: PASS | readOnlyRootFilesystem: PASS"
+          "[iac] running terraform validate...",
+          "[iac] validating GCP resource specifications against Org Policies",
+          "[iac] checking IAM least-privilege bindings: PASSED",
+          "[iac] VPC firewall ingress rules verified strictly internal"
         ]
       },
       {
         id: "stage-deploy",
-        name: "GitOps Deploy",
+        name: "GKE Deployment",
         icon: "fa-solid fa-cloud-arrow-up",
-        tool: "ArgoCD",
+        tool: "Google Cloud Build",
         status: "running",
-        duration: "42s",
-        details: "Blue/Green deployment to AWS EKS cluster with automated Route 53 health checking.",
+        duration: "38s",
+        details: "Rolling update to Google Kubernetes Engine cluster with automated health checks.",
         log: [
-          "[gitops] ArgoCD app sync triggered: production-cluster-mesh",
-          "[gitops] applying deployment manifests to namespace: production",
-          "[gitops] spinning up green replica set (8 pods active)",
-          "[gitops] synthetic canary probe: 200 OK across 500 requests",
-          "[gitops] cutover complete: 100% traffic shifted to green"
+          "[deploy] authenticating to GKE cluster: gke-prod-asia-south1",
+          "[deploy] applying updated Kubernetes deployment manifests",
+          "[deploy] rolling update: 4 new pods initialized, health probes 200 OK",
+          "[deploy] Cloud Monitoring telemetry active, zero downtime recorded"
         ]
       }
     ]
@@ -261,12 +261,12 @@ window.portfolioData = {
       output: [
         "<span class='term-cyan'>AVAILABLE COMMANDS:</span>",
         "  <span class='term-yellow'>kubectl get pods -n production</span>   Inspect real-time Kubernetes pods status",
-        "  <span class='term-yellow'>terraform plan</span>                  Preview speculative cloud infrastructure changes",
-        "  <span class='term-yellow'>cat resume.txt</span>                  View engineering experience, skills & credentials",
-        "  <span class='term-yellow'>argocd app get production</span>      Inspect ArgoCD GitOps deployment synchronization",
-        "  <span class='term-yellow'>curl -I /healthz</span>                 Check edge service health, uptime and telemetry",
-        "  <span class='term-yellow'>cat stack.yaml</span>                  Output full declared infrastructure toolchain",
+        "  <span class='term-yellow'>terraform plan</span>                  Preview speculative GCP infrastructure changes",
+        "  <span class='term-yellow'>cat resume.txt</span>                  View Bhavesh's complete experience, skills & credentials",
+        "  <span class='term-yellow'>gcloud info</span>                     Display GCP environment context & configuration",
+        "  <span class='term-yellow'>cat stack.yaml</span>                  Output full declared cloud & DevOps toolchain",
         "  <span class='term-yellow'>whoami</span>                          Display engineer identity & contact information",
+        "  <span class='term-yellow'>curl -I /healthz</span>                 Check edge service health, uptime and telemetry",
         "  <span class='term-yellow'>theme [light|dark]</span>             Control site theme mode from terminal",
         "  <span class='term-yellow'>clear</span>                          Clear terminal viewport"
       ]
@@ -276,40 +276,54 @@ window.portfolioData = {
       desc: "Outputs Kubernetes pod status in production namespace",
       output: [
         "<span class='term-dim'>NAME                                READY   STATUS    RESTARTS   AGE     NODE</span>",
-        "api-gateway-7b8df59f9-2x8p1         1/1     <span class='term-green'>Running</span>   0          4d12h   ip-10-0-12-84.ec2",
-        "api-gateway-7b8df59f9-k7m9q         1/1     <span class='term-green'>Running</span>   0          4d12h   ip-10-0-14-19.ec2",
-        "auth-service-5896b4cd7f-z4xll       1/1     <span class='term-green'>Running</span>   0          18d     ip-10-0-12-84.ec2",
-        "checkout-worker-6c77bb8f-89mvd      1/1     <span class='term-green'>Running</span>   0          2d6h    ip-10-0-15-201.ec2",
-        "event-processor-78d4c97ff-t29wl     1/1     <span class='term-green'>Running</span>   0          7d1h    ip-10-0-14-19.ec2",
-        "observability-agent-d99c4f6-h7w4p   1/1     <span class='term-green'>Running</span>   0          31d     ip-10-0-15-201.ec2",
+        "data-pipeline-worker-6b8f9-4d8w1    1/1     <span class='term-green'>Running</span>   0          5d14h   gke-node-pool-1.c",
+        "data-pipeline-worker-6b8f9-9m2k7    1/1     <span class='term-green'>Running</span>   0          5d14h   gke-node-pool-1.c",
+        "api-service-7f98d4cc-x2p09          1/1     <span class='term-green'>Running</span>   0          12d     gke-node-pool-2.c",
+        "bigquery-sync-agent-884b6-h8t3p     1/1     <span class='term-green'>Running</span>   0          21d     gke-node-pool-2.c",
+        "prometheus-node-exporter-4m12a     1/1     <span class='term-green'>Running</span>   0          30d     gke-node-pool-1.c",
+        "cloud-logging-fluentbit-d891b       1/1     <span class='term-green'>Running</span>   0          30d     gke-node-pool-2.c",
         "",
-        "<span class='term-green'>✔ 6/6 pods Healthy</span> | <span class='term-cyan'>Namespace: production</span> | <span class='term-dim'>Cluster: eks-prod-ap-south-1</span>"
+        "<span class='term-green'>✔ 6/6 pods Healthy</span> | <span class='term-cyan'>Namespace: production</span> | <span class='term-dim'>Cluster: gke-prod-asia-south1</span>"
       ]
     },
 
     "terraform plan": {
-      desc: "Outputs speculative AWS resource modifications",
+      desc: "Outputs speculative GCP resource modifications",
       output: [
-        "<span class='term-dim'>Refreshing Terraform state in 's3://devops-tfstate-ap-south-1'...</span>",
-        "<span class='term-cyan'>Acquired state lock ID: 88f2b71-33e1-4c02-a19b-22b01479d40e</span>",
+        "<span class='term-dim'>Acquiring state lock from 'gs://bhavesh-tfstate-asia-south1'...</span>",
+        "<span class='term-cyan'>Lock acquired: id=gcp-state-91ab42-lock</span>",
         "",
         "Terraform will perform the following actions:",
         "",
-        "  <span class='term-green'>+ module.eks_cluster.aws_eks_node_group.workers_m6i_large</span>",
-        "      capacity_type        = \"SPOT\"",
-        "      desired_size         = 6",
-        "      instance_types       = [\"m6i.xlarge\", \"m5.xlarge\"]",
-        "      scaling_config.max   = 16",
+        "  <span class='term-green'>+ google_container_node_pool.app_pool</span>",
+        "      cluster              = \"gke-prod-asia-south1\"",
+        "      node_count           = 4",
+        "      machine_type         = \"e2-standard-4\"",
+        "      autoscaling.max      = 10",
         "",
-        "  <span class='term-yellow'>~ module.ingress_alb.aws_lb_listener_rule.canary_routing</span>",
-        "      <span class='term-red'>- weight = 10</span>",
-        "      <span class='term-green'>+ weight = 100</span>",
+        "  <span class='term-green'>+ google_bigquery_dataset.analytics_prod</span>",
+        "      dataset_id           = \"reporting_analytics_pipeline\"",
+        "      location             = \"asia-south1\"",
         "",
-        "  <span class='term-green'>+ module.vault_pki.vault_pki_secret_backend_role.eks_cert_issuer</span>",
-        "      ttl                  = \"2160h\"",
+        "  <span class='term-yellow'>~ google_project_iam_member.service_account_least_privilege</span>",
+        "      <span class='term-red'>- role = \"roles/editor\"</span>",
+        "      <span class='term-green'>+ role = \"roles/bigquery.dataEditor\"</span>",
         "",
         "<span class='term-green'>Plan:</span> 2 to add, 1 to change, 0 to destroy.",
-        "<span class='term-cyan'>✔ OPA Policy Check: 42/42 rules passed. No security violations.</span>"
+        "<span class='term-cyan'>✔ GCP Organization Policy Check: 0 violations detected.</span>"
+      ]
+    },
+
+    "gcloud info": {
+      desc: "Displays GCP project configuration and active account",
+      output: [
+        "<span class='term-cyan'>Google Cloud SDK [508.0.0]</span>",
+        "Account: <span class='term-yellow'>bhaveshbharadwaj24@gmail.com</span>",
+        "Project: <span class='term-green'>production-cloud-fleet</span>",
+        "Current Zone: <span class='term-dim'>asia-south1-a (Hyderabad/Mumbai)</span>",
+        "Default Region: <span class='term-dim'>asia-south1</span>",
+        "GKE Context: <span class='term-green'>gke_production-cloud-fleet_asia-south1_prod-cluster</span>",
+        "Status: <span class='term-green'>Authenticated & Active</span>"
       ]
     },
 
@@ -317,46 +331,34 @@ window.portfolioData = {
       desc: "Prints concise career highlights and qualifications",
       output: [
         "<span class='term-cyan'>═════════════════════════════════════════════════════════════════</span>",
-        "<span class='term-bold'>PUNEETH ARADHYA</span> — Senior DevOps & Cloud Infrastructure Engineer",
-        "Location: Mysuru / Bengaluru, Karnataka, India (ap-south-1)",
-        "Experience: 10+ Years in Enterprise Delivery & Platform Engineering",
+        "<span class='term-bold'>BHAVESH BHARADWAJ</span> — Associate Cloud Engineer",
+        "Location: Hyderabad, India (asia-south1 / UTC+05:30)",
+        "Phone: +91-8790419675 | Email: bhaveshbharadwaj24@gmail.com",
+        "Experience: 4+ Years in Cloud Engineering & Infrastructure Automation",
+        "Availability: <span class='term-green'>Available to join immediately</span>",
         "<span class='term-cyan'>═════════════════════════════════════════════════════════════════</span>",
         "",
-        "<span class='term-yellow'>EXPERIENCE:</span>",
-        "  • <span class='term-bold'>LTM</span> (Dec 2025 → Present)",
-        "    Senior Specialist · Software Engineer (DevSecOps & Platform)",
-        "  • <span class='term-bold'>Accenture</span> (Jun 2015 → Sep 2025 · 10 yrs 4 mos)",
-        "    DevOps Engineer — Enterprise CI/CD, Azure DevOps, Platform Modernization",
+        "<span class='term-yellow'>PROFESSIONAL EXPERIENCE:</span>",
+        "  • <span class='term-bold'>Cognizant Technology Solutions</span>, Hyderabad (Feb 2025 – Dec 2026)",
+        "    Associate Cloud Engineer — GCP Administration, IAM Least-Privilege,",
+        "    CI/CD with GitHub Actions & Cloud Build, Terraform IaC, Docker, GKE,",
+        "    BigQuery Data Pipelines, Monitoring with Grafana & Prometheus.",
+        "  • <span class='term-bold'>Sutherland Global Services</span>, Hyderabad (May 2023 – Dec 2024)",
+        "    Junior Data Analyst — PostgreSQL Query Optimization, Python (Pandas) ETL,",
+        "    Automated KPI Reporting, 21% Decision Workflow Efficiency Improvement.",
         "",
         "<span class='term-yellow'>CORE CERTIFICATIONS:</span>",
-        "  • Microsoft Certified: DevOps Engineer Expert (2025–2027)",
-        "  • Microsoft Certified: Azure Developer Associate (2025–2027)",
-        "  • GitHub Certified: GitHub Copilot (2025–2028)",
+        "  • Google Associate Cloud Engineer",
+        "  • Google Cloud Digital Leader",
+        "  • AWS Certified DevOps Engineer – Professional",
+        "  • AWS Certified Cloud Practitioner",
         "",
         "<span class='term-yellow'>EDUCATION:</span>",
-        "  • B.E. in Electrical & Electronics Engineering",
-        "    Sri Jayachamarajendra College of Engineering (SJCE), Mysore (2011–2015)"
-      ]
-    },
-
-    "argocd app get production": {
-      desc: "Inspects ArgoCD GitOps deployment synchronization",
-      output: [
-        "<span class='term-dim'>Name:               production-cloud-fleet</span>",
-        "<span class='term-dim'>Project:            enterprise-core</span>",
-        "<span class='term-dim'>Server:             https://kubernetes.default.svc</span>",
-        "<span class='term-dim'>Namespace:          production</span>",
-        "<span class='term-dim'>Repo:               https://github.com/aradhyapuneeth/gitops-manifests</span>",
-        "<span class='term-dim'>Target Revision:    main (commit: 7f8a91c)</span>",
-        "<span class='term-dim'>Sync Policy:        Automated (Prune, Self-Heal)</span>",
-        "<span class='term-green'>Sync Status:        Synced to 7f8a91c</span>",
-        "<span class='term-green'>Health Status:      Healthy</span>",
+        "  • B.Tech in Computer Science and Engineering",
+        "    St. Peter's Engineering College, JNTUH (2019 – 2023)",
         "",
-        "<span class='term-cyan'>RESOURCE GROUP                   STATUS   HEALTH</span>",
-        "apps/Deployment/api-gateway       Synced   Healthy",
-        "apps/Deployment/auth-service      Synced   Healthy",
-        "networking/Ingress/prod-ingress   Synced   Healthy",
-        "autoscaling/HPA/gateway-hpa       Synced   Healthy"
+        "<span class='term-yellow'>LANGUAGES:</span>",
+        "  • English, Telugu, Hindi, Japanese"
       ]
     },
 
@@ -365,12 +367,11 @@ window.portfolioData = {
       output: [
         "HTTP/2 200 OK",
         "date: " + new Date().toUTCString(),
-        "server: envoy/1.29.1",
+        "server: gke-ingress/envoy",
         "content-type: application/json; charset=utf-8",
-        "x-envoy-upstream-service-time: 2",
-        "x-uptime-seconds: 315360000",
-        "x-region: ap-south-1",
-        "status: {\"system\":\"healthy\",\"database\":\"connected\",\"vault\":\"unsealed\",\"latency_p99\":\"14ms\"}"
+        "x-cloud-trace-context: 9a71b4e288921a/1",
+        "x-region: asia-south1 (Hyderabad)",
+        "status: {\"system\":\"healthy\",\"gcp_iam\":\"least_privilege\",\"bigquery\":\"connected\",\"uptime\":\"4y+\"}"
       ]
     },
 
@@ -378,26 +379,30 @@ window.portfolioData = {
       desc: "Outputs complete infrastructure toolchain",
       output: [
         "<span class='term-cyan'>stack:</span>",
-        "  <span class='term-yellow'>cloud:</span> [AWS, Azure, GCP]",
-        "  <span class='term-yellow'>orchestration:</span> [Kubernetes, EKS, AKS, Docker]",
-        "  <span class='term-yellow'>gitops_cicd:</span> [ArgoCD, GitHub Actions, Azure DevOps, Jenkins]",
-        "  <span class='term-yellow'>iac_governance:</span> [Terraform, Vault, OPA Rego, Helm, Ansible]",
-        "  <span class='term-yellow'>devsecops:</span> [Checkmarx, Snyk, SonarQube, Trivy, Black Duck]",
-        "  <span class='term-yellow'>observability:</span> [Prometheus, Grafana, Datadog, PagerDuty, OpenTelemetry]",
-        "  <span class='term-yellow'>scripting:</span> [Python, Bash, Go, PowerShell, YAML]",
-        "<span class='term-cyan'>mode:</span> <span class='term-green'>automate_everything</span> <span class='term-dim'># release calm • secure by default</span>"
+        "  <span class='term-yellow'>cloud_platforms:</span> [Google Cloud Platform (GCP), AWS (S3, EC2, IAM)]",
+        "  <span class='term-yellow'>gcp_services:</span> [IAM, GKE, Cloud Run, Cloud Functions, BigQuery, VPC, Secret Manager, Cloud Storage]",
+        "  <span class='term-yellow'>containers_orchestration:</span> [Docker, Google Kubernetes Engine (GKE)]",
+        "  <span class='term-yellow'>cicd_devops:</span> [GitHub Actions, Google Cloud Build, Git, GitHub]",
+        "  <span class='term-yellow'>iac_governance:</span> [Terraform, GCP IAM, Organization Policies, Firewall Rules]",
+        "  <span class='term-yellow'>monitoring_logging:</span> [Google Cloud Monitoring, Cloud Logging, Cloud Audit Logs, Prometheus, Grafana]",
+        "  <span class='term-yellow'>scripting_development:</span> [Python, Bash, SQL, FastAPI, Flask, REST APIs]",
+        "  <span class='term-yellow'>databases:</span> [PostgreSQL, BigQuery]",
+        "  <span class='term-yellow'>os_admin:</span> [Linux Ubuntu Administration, Networking]",
+        "<span class='term-cyan'>status:</span> <span class='term-green'>ready_to_join_immediately</span>"
       ]
     },
 
     "whoami": {
       desc: "Prints user information",
       output: [
-        "<span class='term-green'>puneeth@cloud-platform</span>",
-        "Role: Senior DevOps & Platform Engineer",
-        "Base: Mysuru, Karnataka, India (12.2958° N, 76.6394° E)",
-        "Email: aradhyapuneeth@gmail.com",
-        "GitHub: https://github.com/aradhyapuneeth",
-        "Status: System Operational · Ready to ship"
+        "<span class='term-green'>bhavesh@cloud-platform</span>",
+        "Name: Bhavesh Bharadwaj",
+        "Role: Associate Cloud Engineer",
+        "Location: Hyderabad, India (17.3850° N, 78.4867° E)",
+        "Phone: +91-8790419675",
+        "Email: bhaveshbharadwaj24@gmail.com",
+        "Certifications: Google Associate Cloud Engineer, AWS DevOps Engineer – Professional",
+        "Status: Available to join immediately"
       ]
     }
   },
@@ -405,127 +410,138 @@ window.portfolioData = {
   // Tech stack categories for the Stack matrix
   techStackMatrix: [
     {
-      category: "Delivery & GitOps",
-      description: "Automated delivery engines and declarative reconciliation loops",
+      category: "GCP Administration & Security",
+      description: "Least-privilege IAM, organizational governance, network security, and managed services",
       items: [
-        { name: "ArgoCD", icon: "fa-solid fa-code-branch", role: "GitOps Continuous Delivery" },
-        { name: "GitHub Actions", icon: "fa-brands fa-github", role: "Enterprise CI/CD Pipelines" },
-        { name: "Azure DevOps", icon: "fa-brands fa-microsoft", role: "Pipelines, Boards & Artifacts" },
-        { name: "Jenkins", icon: "fa-brands fa-jenkins", role: "Distributed Build Clusters" },
-        { name: "UrbanCode Deploy", icon: "fa-solid fa-server", role: "Enterprise Release Orchestration" }
+        { name: "GCP IAM & Service Accounts", icon: "fa-solid fa-key", role: "Least-Privilege Security" },
+        { name: "VPC & Firewall Rules", icon: "fa-solid fa-shield-halved", role: "Network Isolation & IAP" },
+        { name: "Organization Policies", icon: "fa-solid fa-building-shield", role: "Enterprise Compliance" },
+        { name: "Compute Engine & Cloud Run", icon: "fa-solid fa-server", role: "Serverless & VM Workloads" },
+        { name: "Cloud Functions & Storage", icon: "fa-solid fa-cloud", role: "Event-Driven Processing" }
       ]
     },
     {
-      category: "Cloud & Container Platforms",
-      description: "Elastic, fault-tolerant container runtimes and multi-cloud foundations",
+      category: "Containers & Orchestration",
+      description: "Elastic, fault-tolerant container clusters and multi-cloud foundations",
       items: [
-        { name: "Kubernetes (EKS/AKS)", icon: "fa-solid fa-dharmachakra", role: "Container Orchestration & Scaling" },
-        { name: "AWS Cloud", icon: "fa-brands fa-aws", role: "EKS, Route53, IAM, S3, CloudFront" },
-        { name: "Microsoft Azure", icon: "fa-brands fa-microsoft", role: "AKS, Virtual Networks, Key Vault" },
-        { name: "Docker & Buildx", icon: "fa-brands fa-docker", role: "Multi-arch Containerization" },
-        { name: "Helm", icon: "fa-solid fa-cube", role: "Package Management & Templates" }
+        { name: "Google Kubernetes Engine (GKE)", icon: "fa-solid fa-dharmachakra", role: "Container Orchestration & Scaling" },
+        { name: "Docker", icon: "fa-brands fa-docker", role: "Containerization & Multi-stage Builds" },
+        { name: "Cloud Run", icon: "fa-solid fa-cubes", role: "Managed Serverless Containers" },
+        { name: "AWS Cloud (S3, EC2, IAM)", icon: "fa-brands fa-aws", role: "Multi-Cloud Storage & Compute" },
+        { name: "Firebase & Secret Manager", icon: "fa-solid fa-vault", role: "App Backend & Secrets Vault" }
       ]
     },
     {
-      category: "IaC & DevSecOps Guardrails",
-      description: "Policy-as-code, dynamic secrets, and vulnerability shifting left",
+      category: "CI/CD & Infrastructure as Code",
+      description: "Automated delivery engines, Git repository operations, and declarative IaC",
       items: [
-        { name: "Terraform", icon: "fa-solid fa-cubes", role: "Infrastructure as Code" },
-        { name: "HashiCorp Vault", icon: "fa-solid fa-vault", role: "Ephemeral Secrets & Dynamic STS" },
-        { name: "Open Policy Agent", icon: "fa-solid fa-shield-halved", role: "Rego Policy-as-Code Gates" },
-        { name: "SonarQube & Snyk", icon: "fa-solid fa-bug-slash", role: "SAST, SCA & Container Scans" },
-        { name: "Checkmarx", icon: "fa-solid fa-lock", role: "Static Code Vulnerability Analysis" }
+        { name: "Terraform (IaC)", icon: "fa-solid fa-cubes", role: "Declarative Infrastructure as Code" },
+        { name: "GitHub Actions", icon: "fa-brands fa-github", role: "Automated CI/CD Workflows" },
+        { name: "Google Cloud Build", icon: "fa-solid fa-code-merge", role: "GCP Native Build & Deployment" },
+        { name: "Git & GitHub", icon: "fa-brands fa-git-alt", role: "Repository & PR Management" },
+        { name: "Bash Scripting", icon: "fa-solid fa-terminal", role: "Linux & Cloud CLI Automation" }
       ]
     },
     {
-      category: "Observability & Automation",
-      description: "Real-time metrics, automated remediation, and resilient operations",
+      category: "Monitoring, Logging & Data",
+      description: "Full-stack observability, event tracking, and data processing systems",
       items: [
-        { name: "Prometheus & Grafana", icon: "fa-solid fa-chart-line", role: "Telemetry, Dashboards & Alerts" },
-        { name: "Python & Shell", icon: "fa-brands fa-python", role: "Self-Healing Scripts & Automation" },
-        { name: "Go & PowerShell", icon: "fa-brands fa-golang", role: "Cloud CLI Tools & Runbooks" },
-        { name: "PagerDuty", icon: "fa-solid fa-bell", role: "Incident Routing & Alert Escalation" },
-        { name: "Splunk & Loki", icon: "fa-solid fa-file-waveform", role: "Centralized Audit Log Aggregation" }
+        { name: "Google Cloud Monitoring", icon: "fa-solid fa-chart-line", role: "Metrics, Dashboards & Alerting" },
+        { name: "Cloud Logging & Audit Logs", icon: "fa-solid fa-file-waveform", role: "Audit Trail & Log Analysis" },
+        { name: "Prometheus & Grafana", icon: "fa-solid fa-gauge-high", role: "Telemetry & Custom Visualizations" },
+        { name: "BigQuery & SQL", icon: "fa-solid fa-database", role: "Scalable Data Analytics & ETL" },
+        { name: "Python, FastAPI & PostgreSQL", icon: "fa-brands fa-python", role: "Automation, APIs & Relational DB" }
       ]
     }
   ],
 
-  // Career deployment history (preserving authentic details from index.html)
+  // Career deployment history (reflecting authentic details from Bhavesh's Resume)
   workExperience: [
     {
-      company: "LTM",
-      role: "Senior Specialist · Software Engineer",
-      period: "Dec 2025 → Present",
+      company: "Cognizant Technology Solutions",
+      location: "Hyderabad, India",
+      role: "Associate Cloud Engineer",
+      period: "Feb 2025 → Dec 2026",
       duration: "Current",
       isCurrent: true,
       tag: "HEAD · production",
-      description: "Leading enterprise DevOps and DevSecOps initiatives through pipeline automation, security guardrails, and modern CI/CD practices. Building scalable delivery platforms that enhance developer productivity, enforce security compliance, and streamline multi-team software releases.",
-      skills: ["DevSecOps", "GitHub Actions", "CI/CD Architecture", "Developer Enablement", "Security Automation", "Kubernetes"]
+      description: "Administering and automating GCP and Google Workspace environments with least-privilege IAM and secure service accounts. Building automated workflows with Python, Bash, and Apps Script, designing scalable BigQuery and Kubernetes data pipelines, maintaining CI/CD pipelines via GitHub Actions and Cloud Build, and automating infrastructure using Terraform and Docker. Monitoring cloud health using Cloud Monitoring, Grafana, and Prometheus.",
+      skills: ["Google Cloud Platform", "Terraform", "Docker", "GKE", "GitHub Actions", "Cloud Build", "BigQuery", "Prometheus", "Grafana", "Python", "GCP IAM"]
     },
     {
-      company: "Accenture",
-      role: "DevOps Engineer",
-      period: "Jun 2015 → Sep 2025",
-      duration: "10 years 4 months",
+      company: "Sutherland Global Services",
+      location: "Hyderabad, India",
+      role: "Junior Data Analyst",
+      period: "May 2023 → Dec 2024",
+      duration: "1 year 8 months",
       isCurrent: false,
-      tag: "release/2015.06-2025.09",
-      description: "Delivered enterprise-scale DevOps transformations, CI/CD platform migrations, and release engineering solutions for tier-1 banking, insurance, and technology clients. Standardized multi-region cloud infrastructures, reduced deployment overhead by 85%, and migrated 120+ microservices with zero downtime.",
-      skills: ["Azure DevOps", "CI/CD Architecture", "Release Engineering", "Platform Modernization", "Dynamics 365", "Jenkins", "Ansible"]
+      tag: "release/2023.05-2024.12",
+      description: "Wrote and optimized complex SQL queries on PostgreSQL, reducing processing latency. Automated business reporting using Python (Pandas), Excel, and Tableau to enable faster decision-making. Cleaned, transformed, and validated high-volume datasets across systems, improving business decision processes by 21%.",
+      skills: ["PostgreSQL", "SQL Optimization", "Python (Pandas)", "Data ETL", "Tableau", "Workflow Automation", "KPI Analysis"]
     }
   ],
 
-  // Certifications, Awards & Education
+  // Projects specified in Resume
+  projects: [
+    {
+      title: "Automated Data Pipeline on GCP (Serverless)",
+      platform: "Google Cloud Platform",
+      tools: ["Python", "BigQuery", "Cloud Functions", "Cloud Storage", "Cloud Scheduler"],
+      description: "Built an event-driven serverless ETL pipeline using Python, BigQuery, and serverless functions. Automated data ingestion and transformation with scheduled workflows, reducing manual reporting effort by 40%."
+    },
+    {
+      title: "Containerized Cloud File Storage System on AWS",
+      platform: "Amazon Web Services",
+      tools: ["Docker", "Python Flask", "AWS S3", "AWS IAM", "CI/CD"],
+      description: "Developed a Flask application using AWS S3 for scalable storage and IAM for least-privilege access control. Containerized the application with Docker and designed an automated deployment workflow aligned with CI/CD practices."
+    }
+  ],
+
+  // Certifications, Education & Languages
   credentials: {
     certifications: [
       {
-        name: "DevOps Engineer Expert",
-        issuer: "Microsoft Certified",
-        validity: "Jun 2025 → Jun 2027",
-        badgeId: "ED2CB021D00396F2",
-        verifyUrl: "https://learn.microsoft.com/api/credentials/share/en-us/PuneethAradhya-6002/ED2CB021D00396F2?sharingId"
+        name: "Google Associate Cloud Engineer",
+        issuer: "Google Cloud",
+        validity: "Active Credential",
+        badgeId: "GCP-ACE",
+        verifyUrl: "https://cloud.google.com/certification"
       },
       {
-        name: "Azure Developer Associate",
-        issuer: "Microsoft Certified",
-        validity: "Jun 2025 → Jun 2027",
-        badgeId: "BB5EE1E1108B674E",
-        verifyUrl: "https://learn.microsoft.com/api/credentials/share/en-us/PuneethAradhya-6002/BB5EE1E1108B674E?sharingId"
+        name: "Google Cloud Digital Leader",
+        issuer: "Google Cloud",
+        validity: "Active Credential",
+        badgeId: "GCP-CDL",
+        verifyUrl: "https://cloud.google.com/certification"
       },
       {
-        name: "GitHub Copilot Certified",
-        issuer: "GitHub",
-        validity: "Jun 2025 → Jun 2028",
-        badgeId: "10395d56-1daf-4bf1-b781-26445abe637e",
-        verifyUrl: "https://www.credly.com/badges/10395d56-1daf-4bf1-b781-26445abe637e/linked_in_profile"
-      }
-    ],
-
-    awards: [
-      {
-        year: "2020",
-        title: "Accenture Celebrates Excellence",
-        type: "Individual Excellence Award",
-        description: "Awarded for automation initiatives that streamlined mission-critical client deployments, cutting manual intervention by 85%."
+        name: "AWS Certified DevOps Engineer – Professional",
+        issuer: "Amazon Web Services",
+        validity: "Active Credential",
+        badgeId: "AWS-DOP",
+        verifyUrl: "https://aws.amazon.com/certification"
       },
       {
-        year: "2021",
-        title: "pinNAcle Collaborator Award",
-        type: "Cross-Functional Collaboration",
-        description: "Recognized for exceptional teamwork designing and rolling out reusable CI/CD templates across distributed international engineering teams."
-      },
-      {
-        year: "2023",
-        title: "Shared Success Catalyst",
-        type: "Delivery & Innovation Award",
-        description: "Honored for driving knowledge sharing, standardizing GitOps best practices, and accelerating cloud adoption across client divisions."
+        name: "AWS Certified Cloud Practitioner",
+        issuer: "Amazon Web Services",
+        validity: "Active Credential",
+        badgeId: "AWS-CCP",
+        verifyUrl: "https://aws.amazon.com/certification"
       }
     ],
 
     education: {
-      degree: "Bachelor of Engineering (B.E.)",
-      field: "Electrical & Electronics Engineering",
-      institution: "Sri Jayachamarajendra College of Engineering (SJCE), Mysore",
-      years: "2011 → 2015"
-    }
+      degree: "Bachelor of Technology (B.Tech)",
+      field: "Computer Science and Engineering",
+      institution: "St. Peter's Engineering College, JNTUH",
+      years: "Aug 2019 → Mar 2023"
+    },
+
+    languages: [
+      { name: "English", level: "Professional Working Proficiency" },
+      { name: "Telugu", level: "Native / Bilingual" },
+      { name: "Hindi", level: "Professional Working Proficiency" },
+      { name: "Japanese", level: "Conversational / Elementary" }
+    ]
   }
 };

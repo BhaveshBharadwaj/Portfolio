@@ -959,7 +959,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Echo typed command
     const echo = document.createElement('div');
     echo.className = 'term-cmd-echo';
-    echo.innerHTML = `<span class="term-prompt">puneeth@cloud-platform:~$</span> <span class="term-cmd-text">${escapeHtml(cmd)}</span>`;
+    echo.innerHTML = `<span class="term-prompt">bhavesh@cloud-platform:~$</span> <span class="term-cmd-text">${escapeHtml(cmd)}</span>`;
     entry.appendChild(echo);
 
     // Output lines
@@ -1202,7 +1202,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCopyEmail = document.getElementById('btnCopyEmail');
   if (btnCopyEmail) {
     btnCopyEmail.addEventListener('click', () => {
-      const email = data.meta.email || 'aradhyapuneeth@gmail.com';
+      const email = data.meta.email || 'bhaveshbharadwaj24@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         btnCopyEmail.classList.add('copied');
         setTimeout(() => btnCopyEmail.classList.remove('copied'), 3000);

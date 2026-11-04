@@ -33,10 +33,8 @@
     "typescript": "^7.0.2",
     "@types/express": "^4.17.21"
   },
-  "description": "An agency-grade, award-winning DevOps Architect portfolio website featuring an interactive 3D isometric pipeline canvas, glowing orange data conduits with real-time photon pulses, an interactive glassmorphism CLI terminal, a simulated CI/CD pipeline visualizer widget, and a tri-state theme controller.",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
+  "description": "Portfolio of Bhavesh Bharadwaj — Associate Cloud Engineer featuring an interactive 3D isometric pipeline canvas, glowing orange data conduits with real-time photon pulses, interactive glassmorphism CLI terminal, simulated CI/CD pipeline visualizer, and tri-state theme controller.",
+  "author": "Bhavesh Bharadwaj",
   "license": "ISC",
   "allowScripts": {
     "@google/genai@2.28.0": true,
